@@ -11,6 +11,7 @@
 
 :root {
     /* font-size */
+    --fs-xxsm: 10px;
     --fs-xsm: 16px;
     --fs-sm: 20px;
     --fs-md: 25px;
@@ -24,24 +25,27 @@
     --fc-bg-orang: #FFF7F4;
     --fc-grey: #7B7B7B;
     --fc-deepSkyBlue: #00ACFF;
+    --fc-border-grey: #DDDDDD;
 
 }
 
 ::-webkit-scrollbar {
     width: 10px !important;
-    height: 0px !important;
-}
-
-::-webkit-scrollbar-track {
-    border-radius: 10px;
-    background-color: antiquewhite;
+    height: 10px !important;
+    /* background-color: blue; */
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--fc-Orange);
-    border-radius: 20px;
+    background-color: var(--fc-border-grey) !important;
+    border-radius: 20px !important;
     width: 10px !important;
 }
+
+::-webkit-scrollbar-track {
+    border-radius: 20px !important;
+    background-color: var(--white);
+}
+
 
 /*===========================nav============================== */
 .bg-white {
@@ -324,10 +328,12 @@
     background: var(--White, #FFF);
     box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.10);
     overflow: hidden;
+    border: 2px solid transparent;
 }
 
 .card-4:hover {
     box-shadow: 0px 3px 15px 3px rgba(0, 0, 0, 0.40);
+    border: 2px solid var(--fc-border-grey);
 }
 
 .iconBox {
@@ -427,28 +433,19 @@
     width: 100%;
     height: 100%;
     background: linear-gradient(0deg, rgba(255, 83, 0, 0.90) 0%, rgba(255, 83, 0, 0.90) 100%);
-    display: none;
-    transition: all 300ms linear;
     opacity: 0;
-}
-
-.position-absolute3 {
     position: absolute;
-    top: 0;
-    right: 0;
+    inset: 0;
     transition: all 300ms linear;
+    display: flex;
 }
-
 
 .img-hover:hover .grid-box {
-    display: flex;
-    top: 0;
-    right: 0;
-    transition: all 300ms linear;
+    inset: 0;
     opacity: 1;
 }
 
-.zoom {
+/* .zoom {
     transition: transform.5s;
     transition: all 300ms linear;
 }
@@ -456,7 +453,7 @@
 .zoom:hover {
     transition: all 300ms linear;
     transform: scale(.5);
-}
+} */
 
 /* ================================section-6-slider-1============================= */
 .mx-w-370 {
@@ -464,11 +461,11 @@
 }
 
 .font-size {
-    font-size: 10px;
+    font-size: var(--fs-xxsm);
 }
 
 .fnt-size {
-    font-size: 20px;
+    font-size: var(--fs-xl);
 }
 
 .slider-1-card {
@@ -597,6 +594,19 @@
     height: 160px;
 }
 
+/* ===========================section-10============================ */
+.mx-w-213 {
+    max-width: 213px;
+}
+
+.mx-w-223 {
+    max-width: 223px;
+}
+
+.mx-w-159 {
+    max-width: 159px;
+}
+
 /* ==========================footer====================== */
 .mx-w-263 {
     max-width: 263px;
@@ -606,8 +616,8 @@
     background: var(--fc-orang);
 }
 
-.py-18 {
-    padding: 18px 0;
+.py-27 {
+    padding: 27px 0;
 }
 
 .cursor-pointer {
@@ -643,6 +653,7 @@
     width: 40px;
     height: 40px;
     background-color: var(--fc-white);
+    transition: all 300ms linear;
 }
 
 .fotter-iconBox:hover svg path {
@@ -671,13 +682,13 @@
 }
 
 .topBtn {
-    width: 80px;
-    height: 80px;
+    width: 50px;
+    height: 50px;
     background: var(--fc-orang);
     border-radius: 50%;
     display: none;
     position: fixed;
-    bottom: 15px;
+    bottom: -2px;
     right: 10%;
     cursor: pointer;
     opacity: 0;
@@ -687,6 +698,10 @@
 .topBtn.show {
     opacity: 1;
     visibility: visible;
+}
+
+.mt-6 {
+    margin-top: 4rem !important;
 }
 
 
@@ -772,6 +787,15 @@
 
     .ps-10 {
         padding-left: 20%;
+    }
+
+    .topBtn {
+        width: 80px;
+        height: 80px;
+    }
+
+    .mt-md-6 {
+        margin-top: 4rem;
     }
 }
 
